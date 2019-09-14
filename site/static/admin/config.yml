@@ -5,15 +5,48 @@ media_folder: "site/static/img" # Folder where user uploaded files should go
 public_folder: "img"
 
 collections: # A list of collections the CMS should be able to edit
+  - name: "institution"
+    label: "Institución"
+    folder: "site/content/institutions"
+    create: true
+    extension: "json"
+    fields:
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Sector", name: "sector", widget: "string" }
+      - { label: "Descripcion", name: "descripcion", widget: "text" }
+      - { label: "Mision", name: "mision", widget: "text" }
+      - { label: "Vision", name: "vision", widget: "text" }
+      - { label: "Correo", name: "correo", widget: "string" }
+      - { label: "Telefono", name: "telefono", widget: "number" }
+      - { label: "Facebook", name: "fb", widget: "string" }
+      - { label: "Twitter", name: "tw", widget: "string" }
+      - { label: "Foto", name: "fotoURL", widget: "string" }
   - name: "candidate" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Candidate" # Used in the UI, ie.: "New Post"
     folder: "site/content/candidates" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     extension: "json"
     fields: # The fields each document in this collection have
-      - {label: "Name", name: "title", widget: "string"}
-      - {label: "Fecha de nacimiento", name: "birthdate", widget: "datetime"}
-      - {label: "Experiencia academica", name: "academic", widget: "text"}
+      - { label: "Nombre", name: "nombre", widget: "string" }
+      - { label: "Sexo", name: "sexo", widget: "string" }
+      - { label: "Puesto", name: "puesto", widget: "string" }
+      - { label: "Dependencia", name: "dependencia", widget: "string" }
+      - { label: "Departamento", name: "departamento", widget: "string" }
+      - { label: "Institution", name: "institution", widget: "string" }
+      - { label: "Seleccionar institución", name: "seleccionarInstitución", widget: "string" }
+      - { label: "Election", name: "election", widget: "string" }
+      - { label: "Seleccionar elección", name: "seleccionarElección", widget: "string" }
+      - { label: "Comission", name: "comission", widget: "string" }
+      - { label: "Seleccionar comisión", name: "seleccionarComisión", widget: "string" }
+      - { label: "Fechalaboral", name: "fechalaboral", widget: "string" }
+      - { label: "Nocolegiado", name: "nocolegiado", widget: "string" }
+      - { label: "Estadocivil", name: "estadocivil", widget: "string" }
+      - { label: "Profesion", name: "profesion", widget: "string" }
+      - { label: "Anosexperiencia", name: "anosexperiencia", widget: "string" }
+      - { label: "Experiencia profesional", name: "experienciaProfesional", widget: "string" }
+      - { label: "Experiencia academica", name: "experienciaAcademica", widget: "string" }
+      - { label: "Publicaciones", name: "publicaciones", widget: "string" }
+      - { label: "Foto", name: "fotoURL", widget: "image", required: false }
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "site/content/post" # The path to the folder where the documents are stored
